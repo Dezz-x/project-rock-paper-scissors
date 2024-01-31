@@ -1,1 +1,1 @@
-# project-tic-tac-toe
+# Project: Rock, Paper, Scissors
