@@ -1,1 +1,1 @@
-# project-tic-tac-toe
+# The Odin Project: Rock, Paper, Scissors
