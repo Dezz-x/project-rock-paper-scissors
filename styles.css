@@ -18,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+/*
 #rock, #paper, #scissors{
     display: flex;
     border: 2px solid #171717;
