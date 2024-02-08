@@ -53,9 +53,10 @@ function playGame(){
             return computerChoice;
         }
         
-        const computerSelection = getComputerChoice();
+        const computerSelection = getComputerChoice().toUpperCase();
         console.log("CPU selects: " + computerSelection);
-        const playerSelection = prompt("Choose your weapon: Rock, Paper, or Scissors?");
+        
+        const playerSelection = prompt("Choose your weapon: Rock, Paper, or Scissors?").toUpperCase();
         console.log("Player selects: " + playerSelection);
 
         function playRound(playerSelection, computerSelection) {
@@ -63,23 +64,26 @@ function playGame(){
             if (playerSelection == computerSelection) {
                 alert("It's a tie!");
             }
-            else if (playerSelection == "Rock" && computerSelection == "Scissors") {
+            else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
                 alert("You win! Rock beats scissors");
             }
-            else if (playerSelection == "Rock" && computerSelection == "Paper") {
+            else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
                 alert("You lose :( Paper beats rock");
             }
-            else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+            else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
                 alert("You win! Scissors beats paper");
             }
-            else if (playerSelection == "Scissors" && computerSelection == "Rock"){
+            else if (playerSelection == "SCISSORS" && computerSelection == "ROCK"){
                 alert("You lose :( Rock beats scissors");
             }
-            else if (playerSelection == "Paper" && computerSelection == "Rock"){
+            else if (playerSelection == "PAPER" && computerSelection == "ROCK"){
                 alert("You win! Paper beats rock");
             }
-            else if (playerSelection == "Paper" && computerSelection == "Scissors"){
+            else if (playerSelection == "PAPER" && computerSelection == "SCISSORS"){
                 alert("You lose :( Scissors beats paper");
+            }
+            else {
+                alert("Oops! Check your spelling.")
             }
         } playRound(playerSelection, computerSelection); 
 
