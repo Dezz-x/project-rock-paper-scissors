@@ -40,9 +40,6 @@ function playRound(playerSelection, computerSelection) {
 */
 
 //Best of 5 function that loops through the playRound function 5 times
-let playerScore = 0;
-let computerScore = 0;
-
 function playGame(){
     for (let i = 0; i < 5; i++){
         
@@ -60,33 +57,43 @@ function playGame(){
         console.log("Player selects: " + playerSelection);
 
         function playRound(playerSelection, computerSelection) {
-    
+
+            let playerScore = 0;
+            let computerScore = 0;
+           
             if (playerSelection == computerSelection) {
                 alert("It's a tie!");
             }
             else if (playerSelection == "ROCK" && computerSelection == "SCISSORS") {
                 alert("You win! Rock beats scissors");
+                playerScore++
             }
             else if (playerSelection == "ROCK" && computerSelection == "PAPER") {
                 alert("You lose :( Paper beats rock");
+                computerScore++
             }
             else if (playerSelection == "SCISSORS" && computerSelection == "PAPER") {
                 alert("You win! Scissors beats paper");
+                playerScore++
             }
             else if (playerSelection == "SCISSORS" && computerSelection == "ROCK"){
                 alert("You lose :( Rock beats scissors");
+                computerScore++
             }
             else if (playerSelection == "PAPER" && computerSelection == "ROCK"){
                 alert("You win! Paper beats rock");
+                playerScore++
             }
             else if (playerSelection == "PAPER" && computerSelection == "SCISSORS"){
                 alert("You lose :( Scissors beats paper");
+                computerScore++
             }
             else {
                 alert("Oops! Check your spelling.")
             }
+            console.log("Player score: " + playerScore);
+            console.log("CPU score: " + computerScore)
         } playRound(playerSelection, computerSelection); 
-
-    }
+    };
 }
 playGame();
