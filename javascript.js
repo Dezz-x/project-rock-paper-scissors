@@ -53,6 +53,8 @@ function playRound() {
 //Best of 5 function that loops through the playRound function 5 times
 function playGame(){
     for (let i = 0; i < 5; i++){
+        let playerTotal = 0;
+        let computerTotal = 0;
         playRound();
     }
     
