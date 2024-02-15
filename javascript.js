@@ -1,3 +1,7 @@
+//Variables for keeping indivdual scores
+let playerScore = 0;
+let computerScore = 0;
+
 //One round function that logs a score to the console
 function playRound() {
     
@@ -14,9 +18,6 @@ function playRound() {
     console.log("CPU selects:" + computerSelection);
     let playerSelection = prompt("Choose your weapon: Rock, Paper, or Scissors?").toUpperCase();
     console.log("Player selects: " + playerSelection);
-
-    let playerScore = 0;
-    let computerScore = 0;
     
     if (playerSelection == computerSelection) {
         alert("It's a tie!");
@@ -53,10 +54,25 @@ function playRound() {
 //Best of 5 function that loops through the playRound function 5 times
 function playGame(){
     for (let i = 0; i < 5; i++){
-        let playerTotal = 0;
-        let computerTotal = 0;
         playRound();
     }
-    
+    if(playerScore > computerScore){
+        alert("You have won the game!")
+    }
+    else if(computerScore > playerScore){
+        alert("Oh no! You have lost the game")
+    }
+    //In the event of a tie
+    else{
+        alert("Sudden death!");
+        playRound();
+
+        if(playerScore > computerScore){
+            alert("You have won sudden death!")
+        }
+        else if(computerScore > playerScore){
+            alert("You have lost sudden death!")
+        }
+    }
 }
 playGame();
