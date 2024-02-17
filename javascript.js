@@ -73,6 +73,9 @@ function playGame(){
         else if(computerScore > playerScore){
             alert("You have lost sudden death!")
         }
+        else if(playerScore == computerScore){
+            playRound();
+        }
     }
 }
 playGame();
