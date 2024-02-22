@@ -74,7 +74,7 @@ function playGame(){
             alert("You have lost sudden death!")
         }
         else if(playerScore == computerScore){
-            playRound();
+            alert("The game has ended in a tie")
         }
     }
 }
