@@ -1,10 +1,3 @@
-const btn1 = document.getElementById("rock");
-btn1.addEventListener("click", playRock())
-
-function playRock(){
-    console.log("Rock");
-}
-
 //Variables for keeping indivdual scores
 let playerScore = 0;
 let computerScore = 0;
@@ -23,8 +16,9 @@ function playRound() {
     //Variables for the selections of the CPU and User
     let computerSelection = getComputerChoice().toUpperCase();
     console.log("CPU selects: " + computerSelection);
-    let playerSelection = prompt("Choose your weapon: Rock, Paper, or Scissors?").toUpperCase();
-    console.log("Player selects: " + playerSelection);
+    let playerSelection = document.querySelector("button")
+
+    playerSelection.addEventListener("click", )
     
     if (playerSelection == computerSelection) {
         alert("It's a tie!");
