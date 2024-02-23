@@ -1,5 +1,8 @@
-function selectRock(){
-    return document.getElementById("rock");
+const btn1 = document.getElementById("rock");
+btn1.addEventListener("click", playRock())
+
+function playRock(){
+    console.log("Rock");
 }
 
 //Variables for keeping indivdual scores
@@ -12,15 +15,14 @@ function playRound() {
     //Generating random pick for the computer
     const picks = ["Rock", "Paper", "Scissors"];
     const computerChoice = picks[Math.floor(Math.random() * picks.length)];
-
+    
     function getComputerChoice(){
         return computerChoice;
     };
 
-
     //Variables for the selections of the CPU and User
     let computerSelection = getComputerChoice().toUpperCase();
-    console.log("CPU selects:" + computerSelection);
+    console.log("CPU selects: " + computerSelection);
     let playerSelection = prompt("Choose your weapon: Rock, Paper, or Scissors?").toUpperCase();
     console.log("Player selects: " + playerSelection);
     
@@ -84,3 +86,6 @@ function playGame(){
     }
 }
 playGame();
+
+/*prompt("Choose your weapon: Rock, Paper, or Scissors?").toUpperCase();
+    console.log("Player selects: " + playerSelection);
