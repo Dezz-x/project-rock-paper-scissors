@@ -1,3 +1,7 @@
+function selectRock(){
+    return document.getElementById("rock");
+}
+
 //Variables for keeping indivdual scores
 let playerScore = 0;
 let computerScore = 0;
@@ -12,6 +16,7 @@ function playRound() {
     function getComputerChoice(){
         return computerChoice;
     };
+
 
     //Variables for the selections of the CPU and User
     let computerSelection = getComputerChoice().toUpperCase();
