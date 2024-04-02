@@ -6,8 +6,8 @@ let computerScore = 0;
 function playRound() {
     
     //Generating random pick for the computer
-    const picks = ["Rock", "Paper", "Scissors"];
-    const computerChoice = picks[Math.floor(Math.random() * picks.length)];
+    const selections = ["Rock", "Paper", "Scissors"];
+    const computerChoice = selections[Math.floor(Math.random() * selections.length)];
     
     function getComputerChoice(){
         return computerChoice;
@@ -16,9 +16,8 @@ function playRound() {
     //Variables for the selections of the CPU and User
     let computerSelection = getComputerChoice().toUpperCase();
     console.log("CPU selects: " + computerSelection);
-    let playerSelection = document.querySelector("button")
-
-    playerSelection.addEventListener("click", )
+    let playerSelection = prompt("Choose your weapon! Rock, Paper or Scissors?").toUpperCase();
+    alert("Player selects: " + playerSelection);
     
     if (playerSelection == computerSelection) {
         alert("It's a tie!");
@@ -80,6 +79,3 @@ function playGame(){
     }
 }
 playGame();
-
-/*prompt("Choose your weapon: Rock, Paper, or Scissors?").toUpperCase();
-    console.log("Player selects: " + playerSelection);
