@@ -3,4 +3,48 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #181818;
+    font-family: Oswald;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1{
+    text-align: center;
+    color: #ededed;
+    font-size: 64px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.button-container{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+button{
+    padding: 20px;
+    height: 300px;
+    width: 300px;
+    border: none;
+    color: #ededed;
+    box-shadow: #da0037 0px 0px 4px 2px;
+    border-radius: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+button:hover{
+    color: #181818;
+    background-color: #ededed;
 }
