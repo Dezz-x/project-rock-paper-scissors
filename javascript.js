@@ -1,3 +1,39 @@
+const button = document.querySelectorAll("button");
+const rock = document.querySelector("#Rock");
+const paper = document.querySelector("#Paper");
+const scissors =document.querySelector("#Scissors");
+let playerSelection = getPlayerChoice();
+
+function getPlayerChoice(){
+    button.addEventListener("click", (e) => {
+        if(e.target.id == "#Rock"){
+            playerSelection = "ROCK";
+        }
+        else if(e.target.id == "#Paper"){
+            playerSelection = "PAPER";
+        }
+        else if(e.target.id == "#Scissors"){
+            playerSelection = "SCISSORS";
+        };
+    });
+};
+
+rock.addEventListener("click", () => {
+    let playerSelection = "ROCK";
+    console.log(playerSelection);
+});
+
+paper.addEventListener("click", () => {
+    let playerSelection = "PAPER";
+    console.log(playerSelection);
+});
+
+scissors.addEventListener("click", () => {
+    let playerSelection = "SCISSORS";
+    console.log(playerSelection);
+});
+
+
 //Variables for keeping indivdual scores
 let playerScore = 0;
 let computerScore = 0;
@@ -16,8 +52,6 @@ function playRound() {
     //Variables for the selections of the CPU and User
     let computerSelection = getComputerChoice().toUpperCase();
     console.log("CPU selects: " + computerSelection);
-    let playerSelection = prompt("Choose your weapon! Rock, Paper or Scissors?").toUpperCase();
-    alert("Player selects: " + playerSelection);
     
     if (playerSelection == computerSelection) {
         alert("It's a tie!");
