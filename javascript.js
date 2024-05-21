@@ -1,39 +1,3 @@
-const button = document.querySelectorAll("button");
-const rock = document.querySelector("#Rock");
-const paper = document.querySelector("#Paper");
-const scissors =document.querySelector("#Scissors");
-let playerSelection = getPlayerChoice();
-
-function getPlayerChoice(){
-    button.addEventListener("click", (e) => {
-        if(e.target.id == "#Rock"){
-            playerSelection = "ROCK";
-        }
-        else if(e.target.id == "#Paper"){
-            playerSelection = "PAPER";
-        }
-        else if(e.target.id == "#Scissors"){
-            playerSelection = "SCISSORS";
-        };
-    });
-};
-
-rock.addEventListener("click", () => {
-    let playerSelection = "ROCK";
-    console.log(playerSelection);
-});
-
-paper.addEventListener("click", () => {
-    let playerSelection = "PAPER";
-    console.log(playerSelection);
-});
-
-scissors.addEventListener("click", () => {
-    let playerSelection = "SCISSORS";
-    console.log(playerSelection);
-});
-
-
 //Variables for keeping indivdual scores
 let playerScore = 0;
 let computerScore = 0;
@@ -52,6 +16,22 @@ function playRound() {
     //Variables for the selections of the CPU and User
     let computerSelection = getComputerChoice().toUpperCase();
     console.log("CPU selects: " + computerSelection);
+
+    const userSelection = document.querySelector(".button-container");
+    let playerSelection = userSelection;
+    playerSelection.addEventListener("click", (e) => {
+        let target = e.target
+
+        if(target.id == "Rock"){
+            console.log("ROCK");
+        }
+        if(target.id == "Paper"){
+            console.log("PAPER");
+        }
+        if(target.id == "Scissors"){
+            console.log("SCISSORS");
+        };
+    });
     
     if (playerSelection == computerSelection) {
         alert("It's a tie!");
@@ -87,7 +67,7 @@ function playRound() {
 
 //Best of 5 function that loops through the playRound function 5 times
 function playGame(){
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 4; i++){
         playRound();
     }
     if(playerScore > computerScore){
