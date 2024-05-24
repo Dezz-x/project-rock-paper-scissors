@@ -1,3 +1,25 @@
+const playerSelection = document.querySelector(".button-container")
+
+playerSelection.addEventListener("click", (e) => {
+    let target = e.target;
+
+    if(target.id == "Rock"){
+        console.log("ROCK");
+    }
+    else if(target.id == "Paper"){
+        console.log("PAPER");
+    }
+    else if(target.id == "Scissors"){
+        console.log("SCISSORS")
+    }
+
+    playRound();
+});
+
+
+
+
+
 //Variables for keeping indivdual scores
 let playerScore = 0;
 let computerScore = 0;
@@ -16,22 +38,6 @@ function playRound() {
     //Variables for the selections of the CPU and User
     let computerSelection = getComputerChoice().toUpperCase();
     console.log("CPU selects: " + computerSelection);
-
-    const userSelection = document.querySelector(".button-container");
-    let playerSelection = userSelection;
-    playerSelection.addEventListener("click", (e) => {
-        let target = e.target
-
-        if(target.id == "Rock"){
-            console.log("ROCK");
-        }
-        if(target.id == "Paper"){
-            console.log("PAPER");
-        }
-        if(target.id == "Scissors"){
-            console.log("SCISSORS");
-        };
-    });
     
     if (playerSelection == computerSelection) {
         alert("It's a tie!");
@@ -59,7 +65,10 @@ function playRound() {
     else if (playerSelection == "PAPER" && computerSelection == "SCISSORS"){
         alert("You lose :( Scissors beats paper");
         computerScore++
-    };
+    }
+    else(
+        alert("You must select Rock, Paper or Scissors!")
+    )
     console.log("Player: " + playerScore);
     console.log("CPU: " + computerScore);
 };
@@ -67,9 +76,6 @@ function playRound() {
 
 //Best of 5 function that loops through the playRound function 5 times
 function playGame(){
-    for (let i = 0; i < 4; i++){
-        playRound();
-    }
     if(playerScore > computerScore){
         alert("You have won the game!")
     }
