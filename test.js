@@ -5,27 +5,29 @@ function getComputerChoice(){
 };
 
 function getHumanChoice(){
-    let playerSelection = prompt("Select your fighter:").toUpperCase();
-
-    switch(playerSelection){
-        case "ROCK":
-            console.log ("ROCK")
-            break;
-
-        case "PAPER":
-            console.log("PAPER")
-            break;
+    let playerSelection = document.querySelector(".button-container");
+    
+    playerSelection.addEventListener("click", (e) => {
         
-        case "SCISSORS":
-            console.log("SCISSORS")
-            break;
+        let target = e.target;
         
-        default:
-            alert("You must choose Rock, Paper, or Scissors!")
-            getHumanChoice();
-    };
-    return playerSelection;
+        if(target.id == "Rock"){
+            playRound("ROCK", computerResult);
+        }
+        else if(target.id == "Paper"){
+            playRound("PAPER", computerResult);
+        }
+        else if(target.id == "Scissors"){
+            playRound("SCISSORS", computerResult);
+        }
+        else {
+            alert("You must select Rock, Paper, or Scissors!")
+        };
+    });
 };
+
+const humanResult = getHumanChoice();
+const computerResult = getComputerChoice();
 
 let humanScore = 0;
 let computerScore = 0;
@@ -62,7 +64,7 @@ function playRound (humanChoice, computerChoice){
 };
 
 
-function playGame (){
+/*function playGame (){
     
     for(let i = 0; i < 5; i++){
 
@@ -101,4 +103,4 @@ function playGame (){
     };
 };
 
-playGame();
+playGame();*/
