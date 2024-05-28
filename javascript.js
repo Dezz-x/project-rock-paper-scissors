@@ -21,8 +21,8 @@ playerSelection.addEventListener("click", (e) => {
 
 
 //Variables for keeping indivdual scores
-let playerScore = 0;
-let computerScore = 0;
+const playerScore = 0;
+const computerScore = 0;
 
 //One round function that logs a score to the console
 function playRound() {
@@ -30,14 +30,15 @@ function playRound() {
     //Generating random pick for the computer
     const selections = ["Rock", "Paper", "Scissors"];
     const computerChoice = selections[Math.floor(Math.random() * selections.length)];
-    
+
     function getComputerChoice(){
         return computerChoice;
     };
-
+    
     //Variables for the selections of the CPU and User
-    let computerSelection = getComputerChoice().toUpperCase();
+    const computerSelection = getComputerChoice().toUpperCase();
     console.log("CPU selects: " + computerSelection);
+
     
     if (playerSelection == computerSelection) {
         alert("It's a tie!");
@@ -66,9 +67,6 @@ function playRound() {
         alert("You lose :( Scissors beats paper");
         computerScore++
     }
-    else(
-        alert("You must select Rock, Paper or Scissors!")
-    )
     console.log("Player: " + playerScore);
     console.log("CPU: " + computerScore);
 };
