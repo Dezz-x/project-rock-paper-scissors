@@ -4,6 +4,8 @@ function getComputerChoice(){
     return computerSelection;
 };
 
+const computerResult = getComputerChoice();
+
 function getHumanChoice(){
     let playerSelection = document.querySelector(".button-container");
     
@@ -27,17 +29,14 @@ function getHumanChoice(){
 };
 
 const humanResult = getHumanChoice();
-const computerResult = getComputerChoice();
 
-const getScoreContent = document.querySelector(".display-score");
-getScoreContent.textContent = "0";
 
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound (humanChoice, computerChoice){
 
-    const getTextContent = document.querySelector(".display-result")
+    const getTextContent = document.querySelector(".display-result");
     
     if(humanChoice == "ROCK" && computerChoice === "SCISSORS"){
         getTextContent.textContent = "You have won the round!";
@@ -61,51 +60,39 @@ function playRound (humanChoice, computerChoice){
     }
     else if(humanChoice == "SCISSORS" && computerChoice == "ROCK"){
         getTextContent.textContent = "You have lost the round!";
-        humanScore++;
+        computerScore++;
+    }
+    else if(humanChoice == computerChoice){
+        getTextContent.textContent = "The round has ended in a tie!";
     }
     else{
-        getTextContent.textContent = "The round has ended in a tie!"
+        getTextContent.textContent = "";
     }
+
+    const getScoreContent = document.querySelector(".display-score");
+    getScoreContent.textContent = "P1: " + humanScore + " | " + "CPU: " + computerScore;
 };
 
-
-/*function playGame (){
-    
-    for(let i = 0; i < 5; i++){
-
-        const humanResult = getHumanChoice();
-        const computerResult = getComputerChoice();
-        
+function checkScore(){
+    if(humanScore < 5 && computerScore < 5){
         playRound(humanResult, computerResult);
-
-        console.log("Your score: " + humanScore);
-        console.log("CPU score: " + computerScore);
     }
-
-    if(humanScore > computerScore){
+    else if(humanScore == 5){
         alert("You have won the game!");
     }
-    else if(humanScore < computerScore){
-        alert("You have lost the game!");
-    }
-    else if(humanScore == computerScore){
-        alert("Sudden death! Winner takes all!");
-        
-        const humanResult = getHumanChoice();
-        const computerResult = getComputerChoice();
-        
-        playRound(humanResult, computerResult);
-        
-        if(humanScore == computerScore){
-            alert("The game has ended in a tie!")
-        }
-        else if(humanScore > computerScore){
-            alert("You are the winner of sudden death!")
-        }
-        else if(humanScore < computerScore){
-            alert("You have lost sudden death!")
-        };
+    else if(computerScore == 5){
+        alert("You have lost the game!")
     };
 };
 
-playGame();*/
+function playGame (){
+    
+    for(let i = 0; i < 5; i++){
+        let humanResult = getHumanChoice();
+        let computerResult = getComputerChoice();
+        
+        playRound(humanResult, computerResult);
+    };
+};
+
+playGame();
