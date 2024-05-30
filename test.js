@@ -29,37 +29,42 @@ function getHumanChoice(){
 const humanResult = getHumanChoice();
 const computerResult = getComputerChoice();
 
+const getScoreContent = document.querySelector(".display-score");
+getScoreContent.textContent = "0";
+
 let humanScore = 0;
 let computerScore = 0;
 
 function playRound (humanChoice, computerChoice){
+
+    const getTextContent = document.querySelector(".display-result")
     
     if(humanChoice == "ROCK" && computerChoice === "SCISSORS"){
-        console.log("You have won the round!");
+        getTextContent.textContent = "You have won the round!";
         humanScore++;
     }
     else if(humanChoice == "ROCK" && computerChoice == "PAPER"){
-        console.log("You have lost the round!");
+        getTextContent.textContent = "You have lost the round!";
         computerScore++;
     }
     else if(humanChoice == "PAPER" && computerChoice == "ROCK"){
-        console.log("You have won the round!");
+        getTextContent.textContent = "You have won the round!";
         humanScore++;
     }
     else if(humanChoice == "PAPER" && computerChoice == "SCISSORS"){
-        console.log("You have lost the round!");
+        getTextContent.textContent = "You have lost the round!";
         computerScore++;
     }
     else if(humanChoice == "SCISSORS" && computerChoice == "PAPER"){
-        console.log("You have won the round!");
+        getTextContent.textContent = "You have won the round!";
         humanScore++;
     }
     else if(humanChoice == "SCISSORS" && computerChoice == "ROCK"){
-        console.log("You have lost the round!");
+        getTextContent.textContent = "You have lost the round!";
         humanScore++;
     }
     else{
-        console.log("The round has ended in a tie")
+        getTextContent.textContent = "The round has ended in a tie!"
     }
 };
 

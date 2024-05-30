@@ -48,3 +48,14 @@ button:hover{
     color: #181818;
     background-color: #ededed;
 }
+
+.display-result {
+    font-size: 36px;
+    color: #ededed;
+    margin: 20px;
+}
+
+.display-score{
+    font-size: 36px;
+    color: #ededed;
+}
