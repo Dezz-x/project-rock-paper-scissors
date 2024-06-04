@@ -1,44 +1,48 @@
 function getComputerChoice(){
     const options = ["Rock", "Paper", "Scissors"]
     let computerSelection = options[Math.floor(Math.random() * options.length)].toUpperCase();
+    console.log(computerSelection);
     return computerSelection;
 };
 
-const computerResult = getComputerChoice();
 
 function getHumanChoice(){
-    let playerSelection = document.querySelector(".button-container");
     
+    let playerSelection = document.querySelector(".button-container");
     playerSelection.addEventListener("click", (e) => {
         
         let target = e.target;
         
         if(target.id == "Rock"){
-            playRound("ROCK", computerResult);
+            playRound("ROCK", getComputerChoice());
         }
         else if(target.id == "Paper"){
-            playRound("PAPER", computerResult);
+            playRound("PAPER", getComputerChoice());
         }
         else if(target.id == "Scissors"){
-            playRound("SCISSORS", computerResult);
+            playRound("SCISSORS", getComputerChoice());
         }
         else {
-            alert("You must select Rock, Paper, or Scissors!")
+            alert("You must select Rock, Paper, or Scissors!");
         };
     });
 };
-
-const humanResult = getHumanChoice();
+let humanChoice = getHumanChoice();
 
 
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound (humanChoice, computerChoice){
+const getScoreContent = document.querySelector(".display-score");
+getScoreContent.textContent = "P1: " + humanScore + " | " + "CPU: " + computerScore;
+
+
+function playRound(humanChoice, computerChoice){
 
     const getTextContent = document.querySelector(".display-result");
+    getTextContent.textContent = "";
     
-    if(humanChoice == "ROCK" && computerChoice === "SCISSORS"){
+    if(humanChoice == "ROCK" && computerChoice=== "SCISSORS"){
         getTextContent.textContent = "You have won the round!";
         humanScore++;
     }
@@ -46,11 +50,11 @@ function playRound (humanChoice, computerChoice){
         getTextContent.textContent = "You have lost the round!";
         computerScore++;
     }
-    else if(humanChoice == "PAPER" && computerChoice == "ROCK"){
+    else if(humanChoice == "PAPER" && computerChoice== "ROCK"){
         getTextContent.textContent = "You have won the round!";
         humanScore++;
     }
-    else if(humanChoice == "PAPER" && computerChoice == "SCISSORS"){
+    else if(humanChoice == "PAPER" && computerChoice== "SCISSORS"){
         getTextContent.textContent = "You have lost the round!";
         computerScore++;
     }
@@ -62,37 +66,10 @@ function playRound (humanChoice, computerChoice){
         getTextContent.textContent = "You have lost the round!";
         computerScore++;
     }
-    else if(humanChoice == computerChoice){
-        getTextContent.textContent = "The round has ended in a tie!";
-    }
-    else{
-        getTextContent.textContent = "";
+    else if(humanChoice === computerChoice){
+        getTextContent.textContent = "The round is a tie!";
     }
 
     const getScoreContent = document.querySelector(".display-score");
     getScoreContent.textContent = "P1: " + humanScore + " | " + "CPU: " + computerScore;
 };
-
-function checkScore(){
-    if(humanScore < 5 && computerScore < 5){
-        playRound(humanResult, computerResult);
-    }
-    else if(humanScore == 5){
-        alert("You have won the game!");
-    }
-    else if(computerScore == 5){
-        alert("You have lost the game!")
-    };
-};
-
-function playGame (){
-    
-    for(let i = 0; i < 5; i++){
-        let humanResult = getHumanChoice();
-        let computerResult = getComputerChoice();
-        
-        playRound(humanResult, computerResult);
-    };
-};
-
-playGame();
