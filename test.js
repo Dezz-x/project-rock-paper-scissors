@@ -70,6 +70,34 @@ function playRound(humanChoice, computerChoice){
         getTextContent.textContent = "The round is a tie!";
     }
 
+    checkScore();
+
     const getScoreContent = document.querySelector(".display-score");
     getScoreContent.textContent = "P1: " + humanScore + " | " + "CPU: " + computerScore;
+
+};
+
+function checkScore (){
+    if(humanScore == 5){
+        
+        const updateTitle = document.querySelector("h1");
+        updateTitle.textContent = "YOU HAVE WON THE GAME!"
+        
+        const removeButton = document.querySelector(".button-container")
+        removeButton.remove();
+        
+        const removeText = document.querySelector(".display-result");
+        removeText.remove();
+    }
+    else if(computerScore == 5){
+
+        const updateTitle = document.querySelector("h1");
+        updateTitle.textContent = "YOU HAVE LOST THE GAME!"
+        
+        const removeButton = document.querySelector(".button-container")
+        removeButton.remove();
+
+        const removeText = document.querySelector(".display-result");
+        removeText.remove();
+    };
 };
