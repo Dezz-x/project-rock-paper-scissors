@@ -61,3 +61,10 @@ button:hover{
     letter-spacing: 2px;
     color: #ededed;
 }
+
+.button-container .restart-button{
+    display: none;
+    height: 50px;
+    width: 200px;
+    border: 2px solid #ededed;
+}

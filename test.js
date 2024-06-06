@@ -77,6 +77,8 @@ function playRound(humanChoice, computerChoice){
 
 };
 
+const buttonContainer = document.querySelector(".button-container");
+
 function checkScore (){
     if(humanScore == 5){
         
@@ -88,6 +90,9 @@ function checkScore (){
         
         const removeText = document.querySelector(".display-result");
         removeText.remove();
+
+        const restartButton = document.createElement("button");
+        restartButton.style.cssText = "height: 50px; width: 200px; border: 2px solid #ededed;";
     }
     else if(computerScore == 5){
 
@@ -99,5 +104,9 @@ function checkScore (){
 
         const removeText = document.querySelector(".display-result");
         removeText.remove();
+
+        const restartButton = document.createElement("button");
+        restartButton.style.cssText = "height: 50px; width: 200px; border: 2px solid #ededed;";
+        
     };
 };
