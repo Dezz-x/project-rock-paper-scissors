@@ -30,14 +30,13 @@ h1{
     padding: 20px;
 }
 
-button{
+button {
     padding: 20px;
     height: 300px;
     width: 300px;
     border: none;
     color: #ededed;
     box-shadow: #da0037 0px 0px 4px 2px;
-    border-radius: 20px;
     font-size: 42px;
     font-weight: 700;
     cursor: pointer;
@@ -62,9 +61,16 @@ button:hover{
     color: #ededed;
 }
 
-.button-container .restart-button{
-    display: none;
-    height: 50px;
+.restart-button {
+    background-color: #da0037;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #ededed;
+    margin: 40px;
+    height: 100px;
     width: 200px;
-    border: 2px solid #ededed;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
 }

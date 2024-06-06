@@ -91,8 +91,8 @@ function checkScore (){
         const removeText = document.querySelector(".display-result");
         removeText.remove();
 
-        const restartButton = document.createElement("button");
-        restartButton.style.cssText = "height: 50px; width: 200px; border: 2px solid #ededed;";
+        restartGame();
+
     }
     else if(computerScore == 5){
 
@@ -105,8 +105,20 @@ function checkScore (){
         const removeText = document.querySelector(".display-result");
         removeText.remove();
 
-        const restartButton = document.createElement("button");
-        restartButton.style.cssText = "height: 50px; width: 200px; border: 2px solid #ededed;";
-        
+        restartGame();
+    
     };
+};
+
+function restartGame(){
+    const restartContainer = document.querySelector(".restart-container");
+    const restartBtn = document.createElement("button");
+    restartBtn.classList.add("restart-button");
+    restartBtn.textContent = "RESTART"
+
+    restartContainer.appendChild(restartBtn);
+
+    restartBtn.addEventListener("click", () => {
+        location.reload();
+    })
 };
